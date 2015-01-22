@@ -4,7 +4,7 @@ namespace AppBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use AppBundle\Entity\Page;
+use AppBundle\Entity\User;
 
 class LoadData implements FixtureInterface
 {
@@ -13,12 +13,13 @@ class LoadData implements FixtureInterface
      */
     public function load(ObjectManager $manager)
     {
-        $page = new Page();
-        $page
-            ->setTitle('Rest API Symfony 2.6')
-            ->setBody('Heres another nice guide on how to create an API with Symfony 2.6');
+        $user = new User();
+        $user
+            ->setUsername('Pavel Durov')
+            ->setEmail('durov@gmail.com')
+            ->setPassword('p1232559d');
 
-        $manager->persist($page);
+        $manager->persist($user);
 
         $manager->flush();
     }
