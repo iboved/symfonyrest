@@ -1,5 +1,30 @@
-app_page:
-    type: rest
-    prefix: /v1
-    resource: "@AppBundle/Controller/PageController.php"
-    name_prefix:  api_1_ # naming collision
+app_user_all:
+    path: /users
+    defaults: { _controller: AppBundle:User:all }
+    requirements:
+        _method: GET
+
+app_user_get:
+    path: /users/{id}
+    defaults: { _controller: AppBundle:User:get }
+    requirements:
+        _method: GET
+        id: "\d+"
+
+app_user_new:
+    path: /users
+    defaults: { _controller: AppBundle:User:new }
+    requirements:
+        _method: POST
+
+app_user_edit:
+    path:  /users/{id}
+    defaults: { _controller: AppBundle:User:edit }
+    requirements:
+        _method: PUT
+
+app_user_delete:
+    path:  /users/{id}
+    defaults: { _controller: AppBundle:User:remove }
+    requirements:
+        _method: DELETE

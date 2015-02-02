@@ -1,0 +1,9 @@
+AppBundle\Entity\User:
+    exclusion_policy: ALL
+    properties:
+        id:
+            exclude: true
+        username:
+            exclude: true
+        email:
+            exclude: true
